@@ -12,48 +12,6 @@ body {
     margin: 0 auto;
 }
 
-.intro_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.header {
-    width: 100%;
-    padding-top: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-.header__logo {
-    height: 32px;
-    width: 36px;
-}
-.header__inner {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav {
-    color: white;
-    font-size: 24px;
-}
-.nav__link {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 15px;
-    position: relative;
-    color: #fff;
-    padding-top: 9px;
-}
-.nav__link:hover {
-    color: #5e5e5e;
-    transition: color 0.4s ease-in-out;
-}
-
 .intro {
     width: 100%;
     height: 140vh;
@@ -61,12 +19,49 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
+
+.intro_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo {
+    height: 32px;
+    width: 36px;
+}
+
+.header__inner {
+    width: 100%;
+    margin-top: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 69px;
+}
+
+.nav__link {
+    color: #fff;
+}
+
+.nav__link:hover {
+    color: #5e5e5e;
+    transition: color 0.4s ease-in-out;
+}
+
 
 .topic {
     width: 100%;
@@ -90,6 +85,7 @@ body {
     justify-content: center;
     margin-top: 24px;
 }
+
 .search {
     width: 463px;
     height: 71px;
@@ -110,10 +106,6 @@ body {
     height: auto;
 }
 
-.search_position {
-    /*transform: translate(140%, -480%);*/
-}
-
 .search__input {
     width: 85%;
     padding-left: 30px;
@@ -124,8 +116,8 @@ body {
     color: white;
     font-size: 20px;
 }
+
 .search__button {
-    /*position: absolute;*/
     width: 15%;
     display: flex;
     justify-content: center;
@@ -171,22 +163,9 @@ body {
     font-size: 16px;
 }
 
-/*.speech-bubble::after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    bottom: -8px; !* Размер угла *!*/
-/*    left: 50%;*/
-/*    margin-left: -9px; !* Ширина угла *!*/
-/*    border-width: 8px 8px 0 8px;*/
-/*    border-style: solid;*/
-/*    border-color: #ffffff transparent transparent transparent;*/
-/*    background-color: rgb(255, 255, 255, 0.3);*/
-/*    border-radius: 24px;*/
-/*}*/
-
 .price-bubble__washer {
     width: var(--speechBubbleWidth);
-    padding-left:  calc((var(--speechBubbleWidth) - var(--speechBubbleWasherCircleWidth)) / 2);;
+    padding-left:  calc((var(--speechBubbleWidth) - var(--speechBubbleWasherCircleWidth)) / 2); /*расположение элемента по центру*//
 }
 
 .price-bubble__circle {
@@ -196,34 +175,20 @@ body {
     background-color: rgb(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 50%;
-
     position: relative;
-    display: inline-block;
 }
 
-
 .price-bubble__hole {
+    position: absolute;
     width: 16px;
     height: 16px;
     margin: auto;
     background-color: white;
     border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-.price-bubble__washer__hole_background {
-    width: 100%;
-    height: 100%;
-}
-
-.price-bubble__washer__hole_position {
-    position: absolute;
-}
-
 
 
 .speech-bubble {
@@ -470,10 +435,12 @@ body {
 .topic_position {
     margin-top: 149px;
 }
+
 .banners {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 .banners_position {
     margin-top: 90px;
@@ -481,11 +448,16 @@ body {
 
 .banners__wide {
     width: 700px;
-    height: 613px;
+    height: 615px;
     border-radius: 30px;
     position: relative;
-    display: flex;
-    justify-content: center;
+}
+
+.banners__wide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
 }
 
 .banners__blackout {
@@ -507,7 +479,15 @@ body {
 
 .banners__narrow {
     width: 429px;
-    height: auto;
+    height: 645px;
+    border-radius: 30px;
+}
+
+.banners__narrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
 }
 
 .banners_direction {
